@@ -2,10 +2,7 @@
 
 import { BackToTop } from "@/components/back-to-top";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { NavBar } from "@/components/nav-bar";
-import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function PrivacyPage() {
   return (
