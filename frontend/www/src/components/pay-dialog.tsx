@@ -20,7 +20,6 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
-import { Profile } from "@/types/data";
 import { toast } from "sonner";
 import { Tables } from "@/types/db";
 
