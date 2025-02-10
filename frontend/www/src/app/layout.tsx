@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { Inter } from 'next/font/google';
+import { Toaster } from '@/components/ui/sonner';
 
 import { ContextProvider } from '@/providers/ContextProvider';
 
@@ -10,8 +11,8 @@ import '@/styles/globals.css';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'The Truth Web App',
-  description: 'SaaS base app for Next.js',
+  title: 'Remove People From Photos',
+  description: 'Magically remove unwanted people from your photos',
 };
 
 export default function RootLayout({
@@ -21,8 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={clsx('font-inter min-h-screen antialiased', inter.variable)}>
-        <ContextProvider>{children}</ContextProvider>
+      <body className={clsx('min-h-screen font-inter antialiased', inter.variable)}>
+        <ContextProvider>
+          {children}
+          <Toaster />
+        </ContextProvider>
       </body>
     </html>
   );
