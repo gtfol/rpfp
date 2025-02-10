@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function PrivacyPage() {
   return (
-    <>
+    <div className='min-h-screen bg-orange-50'>
       <Header />
 
       <motion.div
@@ -191,6 +191,6 @@ export default function PrivacyPage() {
       </motion.div>
       <BackToTop />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -147,7 +147,7 @@ const RemovePeopleApp = () => {
   }
 
   return (
-    <div className='min-h-screen bg-gray-50'>
+    <div className='bg-orange-50 min-h-screen'>
       <div className='mx-auto max-w-4xl px-4 py-12'>
         <header className='mb-8 flex items-center justify-between'>
           <h1 className='text-4xl font-bold text-gray-900'>Remove People from Photos</h1>
