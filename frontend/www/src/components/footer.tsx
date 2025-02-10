@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import GitHub from '@/assets/icons/socials/github';
-import Instagram from '@/assets/icons/socials/instagram';
-import X from '@/assets/icons/socials/x';
-import { scrollToTop } from '@/lib/utils';
-import Link from 'next/link';
+import Discord from "@/assets/icons/socials/discord";
+import GitHub from "@/assets/icons/socials/github";
+import X from "@/assets/icons/socials/x";
+import { scrollToTop } from "@/lib/utils";
+import Link from "next/link";
 
 interface SocialLink {
   href: string;
@@ -21,69 +21,84 @@ interface FooterLinks {
   legal: FooterLink[];
 }
 
-/* const SOCIAL_LINKS: SocialLink[] = [
+const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/gtfol',
-    icon: GitHub,
-    ariaLabel: 'GitHub',
-  },
-  {
-    href: 'https://x.com/gtfol_dev',
+    href: "https://twitter.com/textfully_dev",
     icon: X,
-    ariaLabel: 'X',
+    ariaLabel: "Twitter",
   },
   {
-    href: 'https://instagram.com/gtfol_dev',
-    icon: Instagram,
-    ariaLabel: 'Instagram',
+    href: "https://github.com/textfully",
+    icon: GitHub,
+    ariaLabel: "GitHub",
   },
-]; */
+  {
+    href: "https://discord.gg/Ct6FDCpFBU",
+    icon: Discord,
+    ariaLabel: "Discord",
+  },
+];
 
 const FOOTER_LINKS: FooterLinks = {
   legal: [
-    {
-      href: '/privacy',
-      label: 'Privacy Policy',
-    },
-    {
-      href: '/terms',
-      label: 'Terms of Service',
-    },
+    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/terms", label: "Terms of Service" },
+    { href: "/cookies", label: "Cookie Policy" },
   ],
 };
 
 export const Footer = () => {
   return (
-    <footer className='mt-12 border-t border-primary'>
-      <div className='mx-auto max-w-5xl px-6 py-12'>
-        <div className='flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-0'>
-          <div className='flex flex-col gap-y-6'>
-            <div className='flex flex-col gap-y-4'>
-              <button onClick={scrollToTop} className='flex items-center gap-x-2 focus:outline-primary'>
-                <img src='/icon.png' alt='Remove People From Photos' className='h-10 w-fit flex-shrink-0' />
-                <span className='text-lg font-medium text-primary'>Remove People From Photos</span>
-              </button>
-              <span className='text-zinc-500'>Magically remove unwanted people from your photos</span>
-            </div>
-            {/* <div className='flex gap-x-6'>
+    <footer className="border-t border-[#dededc]">
+      <div className="mx-auto max-w-5xl px-6 py-12">
+        <div className="flex flex-col gap-12 sm:flex-row sm:flex-wrap sm:gap-24">
+          <div className="flex w-full flex-row items-center justify-between sm:w-auto sm:flex-col sm:items-start sm:justify-start sm:space-y-8">
+            <button className="flex items-center gap-x-2" onClick={scrollToTop}>
+              <div className="h-5 w-5">
+                <img
+                  src="/icon.png"
+                  alt="Remove People from Photos"
+                  className="h-5 w-5"
+                />
+              </div>
+              <p className="font-general text-base font-semibold text-primary">
+                Remove People From Photos
+              </p>
+            </button>
+            <div className="flex gap-x-6">
               {SOCIAL_LINKS.map(({ href, icon: Icon, ariaLabel }) => (
-                <a key={href} href={href} aria-label={ariaLabel} className='focus:outline-primary'>
-                  <Icon className='hover:fill-zinc-500-hover h-4 w-4 fill-zinc-500 transition-colors' />
+                <a key={href} href={href} aria-label={ariaLabel}>
+                  <Icon className="h-4 w-4 fill-zinc-600 transition-colors hover:fill-zinc-800" />
                 </a>
               ))}
-            </div> */}
+            </div>
           </div>
 
-          <div className='flex flex-col items-start gap-y-4 sm:items-end'>
-            {FOOTER_LINKS.legal.map(({ href, label }) => (
-              <Link key={href} href={href} className='text-zinc-500 transition-colors hover:text-zinc-500/80'>
-                {label}
-              </Link>
+          <div className="grid w-full grid-cols-2 gap-8 sm:flex-1 sm:grid-cols-4">
+            {Object.entries(FOOTER_LINKS).map(([section, links]) => (
+              <div key={section}>
+                <h3 className="font-general mb-4 font-[550] capitalize">
+                  {section}
+                </h3>
+                <ul className="space-y-2">
+                  {links.map(({ href, label }: FooterLink) => (
+                    <li key={href}>
+                      <a
+                        href={href}
+                        className="text-sm text-zinc-600 transition-colors hover:text-zinc-800"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
-        <div className='mt-12 flex flex-col items-center justify-between border-t border-primary pt-8 sm:flex-row'>
-          <div className='mb-4 text-sm text-primary sm:mb-0'>
+
+        <div className="mt-12 flex flex-col items-center justify-between border-t border-[#dededc] pt-8 sm:flex-row">
+          <div className="mb-4 text-sm text-[#909090] sm:mb-0">
             {`© ${new Date().getFullYear()} gtfol, LLC. All rights reserved.`}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { IS_DEV } from '@/constants/env';
+import { IS_DEV } from "@/constants/env";
 
 export const logError = (error: unknown) => {
   if (IS_DEV) {

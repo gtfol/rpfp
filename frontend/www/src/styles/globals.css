@@ -12,7 +12,6 @@
     --popover-foreground: 240 10% 3.9%;
     --primary: 15 92% 40%; /* #C2410C */
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 15 92% 60%;
     --secondary: 24 100% 85.3%; /* #FFD7B3 */
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
@@ -55,4 +54,10 @@ body,
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/** Primary focus outline */
+button,
+a {
+  @apply focus:outline-primary;
 }

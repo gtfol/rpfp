@@ -1,12 +1,12 @@
-import { defaultMetadata, defaultOpenGraph } from '@/constants/metadata';
-import type { Metadata } from 'next';
+import { defaultMetadata, defaultOpenGraph } from "@/constants/metadata";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'terms of service | gtfol',
+  title: "terms of service | gtfol",
   openGraph: {
     ...defaultOpenGraph,
-    title: 'terms of service | gtfol',
+    title: "terms of service | gtfol",
   },
 };
 

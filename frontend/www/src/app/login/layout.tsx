@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: "privacy policy | gtfol",
+  title: "Login | Remove People from Photos",
   openGraph: {
     ...defaultOpenGraph,
-    title: "privacy policy | gtfol",
+    title: "Login | Remove People from Photos",
   },
 };
 
-export default function PrivacyLayout({
+export default function LoginLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import constate from 'constate';
-import { User } from '@supabase/supabase-js';
-import { createClient } from '@/lib/supabase/client';
+import { useEffect, useState } from "react";
+import constate from "constate";
+import { User } from "@supabase/supabase-js";
+import { createClient } from "@/lib/supabase/client";
 
 const useAuth = () => {
   const [user, setUser] = useState<User | null | undefined>();
@@ -32,7 +32,7 @@ const useAuth = () => {
       if (error) throw error;
       setUser(currentUser);
     } catch (error) {
-      console.error('Failed to fetch user:', error);
+      console.error("Failed to fetch user:", error);
       setUser(null);
     }
   };
@@ -42,7 +42,7 @@ const useAuth = () => {
       await supabase.auth.signOut();
       setUser(null);
     } catch (error) {
-      console.error('Failed to sign out:', error);
+      console.error("Failed to sign out:", error);
     }
   };
 
