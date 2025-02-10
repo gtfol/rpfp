@@ -147,7 +147,7 @@ const RemovePeopleApp = () => {
   }
 
   return (
-    <div className='min-h-screen bg-orange-50'>
+    <div className='bg-orange-50 min-h-screen'>
       <div className='mx-auto max-w-4xl px-4 py-12'>
         <header className='mb-8 flex items-center justify-between'>
           <h1 className='text-4xl font-bold text-gray-900'>Remove People from Photos</h1>
@@ -210,7 +210,7 @@ const RemovePeopleApp = () => {
               </div>
               <div className='text-xl text-gray-700'>
                 Drop your image here, or{' '}
-                <label className='cursor-pointer text-blue-600 hover:text-blue-700'>
+                <label className='text-blue-600 hover:text-blue-700 cursor-pointer'>
                   browse
                   <input
                     ref={fileInputRef}
@@ -243,7 +243,7 @@ const RemovePeopleApp = () => {
                         <div className='mx-auto mb-4 w-full max-w-xs'>
                           <div className='h-2 rounded bg-gray-200'>
                             <div
-                              className='h-2 rounded bg-blue-600 transition-all duration-500'
+                              className='bg-blue-600 h-2 rounded transition-all duration-500'
                               style={{ width: `${progress}%` }}
                             />
                           </div>
@@ -263,7 +263,7 @@ const RemovePeopleApp = () => {
                 <Button
                   onClick={processImage}
                   disabled={isProcessing}
-                  className='rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 disabled:bg-gray-400'
+                  className='bg-blue-600 hover:bg-blue-700 rounded-lg px-6 py-3 text-white disabled:bg-gray-400'
                 >
                   {isProcessing ? 'Processing...' : 'Remove People'}
                 </Button>
@@ -285,7 +285,7 @@ const RemovePeopleApp = () => {
                     link.download = 'processed-image.png';
                     link.click();
                   }}
-                  className='rounded-lg bg-green-600 px-6 py-3 text-white hover:bg-green-700'
+                  className='bg-green-600 hover:bg-green-700 rounded-lg px-6 py-3 text-white'
                 >
                   Download Result
                 </Button>
@@ -298,17 +298,17 @@ const RemovePeopleApp = () => {
           <h2 className='mb-4 text-2xl font-semibold text-gray-900'>How it works</h2>
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
             <div className='rounded-lg bg-white p-6 shadow'>
-              <Upload className='mb-4 h-8 w-8 text-blue-600' />
+              <Upload className='text-blue-600 mb-4 h-8 w-8' />
               <h3 className='mb-2 text-lg font-medium'>1. Upload Photo</h3>
               <p className='text-gray-600'>Upload your image or drag and drop it into the upload area</p>
             </div>
             <div className='rounded-lg bg-white p-6 shadow'>
-              <ImageIcon className='mb-4 h-8 w-8 text-blue-600' />
+              <ImageIcon className='text-blue-600 mb-4 h-8 w-8' />
               <h3 className='mb-2 text-lg font-medium'>2. AI Processing</h3>
               <p className='text-gray-600'>Our AI automatically detects and removes people from your photo</p>
             </div>
             <div className='rounded-lg bg-white p-6 shadow'>
-              <Undo className='mb-4 h-8 w-8 text-blue-600' />
+              <Undo className='text-blue-600 mb-4 h-8 w-8' />
               <h3 className='mb-2 text-lg font-medium'>3. Download Result</h3>
               <p className='text-gray-600'>Download your processed image with people removed</p>
             </div>
