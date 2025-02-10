@@ -59,9 +59,9 @@ export const Footer = () => {
         <div className='flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-0'>
           <div className='flex flex-col gap-y-6'>
             <div className='flex flex-col gap-y-4'>
-              <button onClick={scrollToTop} className='focus:outline-primary flex items-center gap-x-2'>
+              <button onClick={scrollToTop} className='flex items-center gap-x-2 focus:outline-primary'>
                 <img src='/icon.png' alt='Remove People From Photos' className='h-10 w-fit flex-shrink-0' />
-                <span className='text-primary text-lg font-medium'>Remove People From Photos</span>
+                <span className='text-lg font-medium text-primary'>Remove People From Photos</span>
               </button>
               <span className='text-zinc-500'>Magically remove unwanted people from your photos</span>
             </div>
@@ -74,7 +74,7 @@ export const Footer = () => {
             </div> */}
           </div>
 
-          <div className='flex flex-col gap-y-4 items-start sm:items-end'>
+          <div className='flex flex-col items-start gap-y-4 sm:items-end'>
             {FOOTER_LINKS.legal.map(({ href, label }) => (
               <Link key={href} href={href} className='text-zinc-500 transition-colors hover:text-zinc-500/80'>
                 {label}

@@ -29,7 +29,7 @@ export const BackToTop = () => {
     >
       <button
         onClick={scrollToTop}
-        className='flex items-center rounded-full bg-white px-4 py-2 text-zinc-800 shadow-lg transition-all duration-300 hover:brightness-95 border border-zinc-200'
+        className='flex items-center rounded-full border border-zinc-200 bg-white px-4 py-2 text-zinc-800 shadow-lg transition-all duration-300 hover:brightness-95'
       >
         <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'>
           <path
