@@ -49,7 +49,7 @@ export const NavBar = ({
         }
         transition={{ duration: 0.2 }}
         className={clsx(
-          "flex items-center justify-between p-4 px-6",
+          "flex items-center justify-between p-4 px-6 min-h-[72px]",
           isFixed && "bg-orange-50 fixed left-0 right-0 top-0 z-30"
         )}
       >
