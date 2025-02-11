@@ -49,15 +49,15 @@ export default function PricingPage() {
       type: "primary",
     },
     {
-      name: "Enterprise",
+      name: "Business",
       price: "Custom",
       priceSuffix: "",
       features: [
         { name: "Unlimited images", included: true },
-        { name: "High resolution", included: true },
+        { name: "Full resolution", included: true },
         { name: "Batch processing", included: true },
+        { name: "Priority email support", included: true },
         { name: "Custom integrations", included: true },
-        { name: "Dedicated email support", included: true },
       ],
       cta: "Contact us",
       type: "outline",
@@ -70,9 +70,11 @@ export default function PricingPage() {
         router.push("/");
         break;
       case "Pro":
+        // TODO
         router.push("/login");
         break;
-      case "Enterprise":
+      case "Business":
+        // TODO
         router.push("/login");
         break;
     }
@@ -108,7 +110,7 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
                 className={clsx(
-                  "flex flex-col justify-start rounded-xl bg-transparent",
+                  "flex flex-col justify-start rounded-xl bg-transparent"
                 )}
               >
                 <div className="flex w-full items-center justify-between px-2 pb-1 pt-2">
@@ -121,7 +123,7 @@ export default function PricingPage() {
                         "rounded-lg px-2 py-1",
                         plan.type === "primary"
                           ? "bg-primary/10"
-                          : "bg-zinc-100",
+                          : "bg-zinc-100"
                       )}
                     >
                       <p
@@ -129,7 +131,7 @@ export default function PricingPage() {
                           "text-xs font-medium",
                           plan.type === "primary"
                             ? "text-primary"
-                            : "text-zinc-900",
+                            : "text-zinc-900"
                         )}
                       >
                         {plan.label}
@@ -178,13 +180,13 @@ export default function PricingPage() {
                           ? "bg-primary text-white hover:brightness-110"
                           : plan.type === "outline"
                             ? "border border-primary text-primary hover:border-primary hover:bg-primary/10"
-                            : "bg-zinc-100 text-zinc-900 shadow-sm hover:bg-zinc-200",
+                            : "bg-zinc-100 text-zinc-900 shadow-sm hover:bg-zinc-200"
                       )}
                     >
                       <div className="element-dark absolute inset-0 !rounded-lg">
                         <div
                           className={cn(
-                            "element absolute inset-0 !rounded-[7px] opacity-30",
+                            "element absolute inset-0 !rounded-[7px] opacity-30"
                           )}
                         ></div>
                       </div>

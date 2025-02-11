@@ -21,23 +21,7 @@ interface FooterLinks {
   legal: FooterLink[];
 }
 
-const SOCIAL_LINKS: SocialLink[] = [
-  {
-    href: "https://twitter.com/textfully_dev",
-    icon: X,
-    ariaLabel: "Twitter",
-  },
-  {
-    href: "https://github.com/textfully",
-    icon: GitHub,
-    ariaLabel: "GitHub",
-  },
-  {
-    href: "https://discord.gg/Ct6FDCpFBU",
-    icon: Discord,
-    ariaLabel: "Discord",
-  },
-];
+const SOCIAL_LINKS: SocialLink[] = [];
 
 const FOOTER_LINKS: FooterLinks = {
   legal: [
@@ -65,13 +49,13 @@ export const Footer = () => {
                 Remove People From Photos
               </p>
             </button>
-            <div className="flex gap-x-6">
+            {/* <div className="flex gap-x-6">
               {SOCIAL_LINKS.map(({ href, icon: Icon, ariaLabel }) => (
                 <a key={href} href={href} aria-label={ariaLabel}>
                   <Icon className="h-4 w-4 fill-zinc-600 transition-colors hover:fill-zinc-800" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="grid w-full grid-cols-2 gap-8 sm:flex-1 sm:grid-cols-4">

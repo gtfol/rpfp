@@ -22,9 +22,7 @@ interface NavItem {
   link: string;
 }
 
-const navItems: NavItem[] = [
-  { name: "Pricing", link: "/pricing" },
-];
+const navItems: NavItem[] = [{ name: "Pricing", link: "/pricing" }];
 
 interface NavBarProps {
   shouldAnimate?: boolean;
@@ -52,7 +50,7 @@ export const NavBar = ({
         transition={{ duration: 0.2 }}
         className={clsx(
           "flex items-center justify-between p-4 px-6",
-          isFixed && "bg-orange-50 fixed left-0 right-0 top-0 z-30",
+          isFixed && "bg-orange-50 fixed left-0 right-0 top-0 z-30"
         )}
       >
         <div className="flex items-center gap-x-8">
@@ -77,7 +75,7 @@ export const NavBar = ({
                   "text-sm font-medium transition",
                   pathname === item.link
                     ? "text-black"
-                    : "text-zinc-600 hover:text-zinc-800",
+                    : "text-zinc-600 hover:text-zinc-800"
                 )}
               >
                 {item.name}
@@ -129,11 +127,21 @@ export const NavBar = ({
                       </div>
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                      <Link href="/dashboard">My Account</Link>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href="/dashboard"
+                        className="w-full cursor-pointer focus:outline-none"
+                      >
+                        My Account
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <button onClick={() => signOut()}>Logout</button>
+                    <DropdownMenuItem asChild>
+                      <button
+                        onClick={() => signOut()}
+                        className="w-full text-left cursor-pointer focus:outline-none"
+                      >
+                        Logout
+                      </button>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -202,7 +210,7 @@ export const NavBar = ({
                     "text-base font-medium transition",
                     pathname === item.link
                       ? "text-primary"
-                      : "text-zinc-600 hover:text-zinc-800",
+                      : "text-zinc-600 hover:text-zinc-800"
                   )}
                 >
                   {item.name}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -9,6 +9,7 @@ import Google from "@/assets/icons/socials/google";
 import { z } from "zod";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { useAuthContext } from "@/contexts/useAuthContext";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -18,6 +19,8 @@ const loginSchema = z.object({
 type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
+  const { user } = useAuthContext();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -91,6 +94,12 @@ export default function LoginPage() {
       toast.error(error.message);
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      router.push("/");
+    }
+  }, [user, router]);
 
   return (
     <div className="bg-orange-50 min-h-screen text-black">
@@ -166,7 +175,7 @@ export default function LoginPage() {
                 "w-full rounded-lg border bg-[#f9f9f9] px-3 py-2 outline-none transition-colors placeholder:text-zinc-400 focus:ring-1",
                 emailError
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-zinc-200 focus:border-zinc-300 focus:ring-primary",
+                  : "border-zinc-200 focus:border-zinc-300 focus:ring-primary"
               )}
               placeholder="michael@dundermiflin.com"
               tabIndex={1}
@@ -199,7 +208,7 @@ export default function LoginPage() {
                 "w-full rounded-lg border bg-[#f9f9f9] px-3 py-2 outline-none transition-colors focus:ring-1",
                 passwordError
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-zinc-200 focus:border-zinc-300 focus:ring-primary",
+                  : "border-zinc-200 focus:border-zinc-300 focus:ring-primary"
               )}
               tabIndex={2}
             />
