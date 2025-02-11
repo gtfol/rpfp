@@ -19,14 +19,16 @@ import PayDialog from "@/components/pay-dialog";
 import { createClient } from "@/lib/supabase/client";
 import { Tables } from "@/types/db";
 import { NavBar } from "@/components/nav-bar";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+
+const searchParams = new URLSearchParams(
+  typeof window !== "undefined" ? window.location.search : ""
+);
 
 const HomePage = () => {
   const { user } = useAuthContext();
   const supabaseClient = createClient();
-  const router = useRouter();
-  const searchParams = useSearchParams();
 
   const [image, setImage] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -36,8 +38,10 @@ const HomePage = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isPayDialogOpen, setIsPayDialogOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState<Tables<"profiles"> | null>(
-    null,
+    null
   );
+
+  const router = useRouter();
 
   const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/webp"];
 
@@ -67,7 +71,7 @@ const HomePage = () => {
 
     if (!SUPPORTED_FORMATS.includes(file.type)) {
       throw new Error(
-        "Unsupported file format. Please use JPEG, PNG, or WebP.",
+        "Unsupported file format. Please use JPEG, PNG, or WebP."
       );
     }
 
@@ -104,7 +108,7 @@ const HomePage = () => {
 
   const handleDrop = useCallback(
     (
-      e: React.DragEvent<HTMLDivElement> | React.ChangeEvent<HTMLInputElement>,
+      e: React.DragEvent<HTMLDivElement> | React.ChangeEvent<HTMLInputElement>
     ) => {
       e.preventDefault();
       const file =
@@ -113,7 +117,7 @@ const HomePage = () => {
         handleFileSelect(file);
       }
     },
-    [handleFileSelect],
+    [handleFileSelect]
   );
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -168,7 +172,7 @@ const HomePage = () => {
         });
       }, 500);
     }
-  }, [router, searchParams]);
+  }, [router]);
 
   return (
     <div className="bg-orange-50 min-h-screen text-black">
@@ -333,7 +337,7 @@ const HomePage = () => {
                         const downloadUrl = new URL(processedImage);
                         downloadUrl.searchParams.set(
                           "resolution",
-                          maxResolution,
+                          maxResolution
                         );
                         link.href = downloadUrl.toString();
                         link.download = "processed-image.png";
