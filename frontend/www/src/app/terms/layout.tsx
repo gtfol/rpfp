@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: "terms of service | gtfol",
+  title: "Terms of Service | Remove People from Photos",
   openGraph: {
     ...defaultOpenGraph,
-    title: "terms of service | gtfol",
+    title: "Terms of Service | Remove People from Photos",
   },
 };
 
