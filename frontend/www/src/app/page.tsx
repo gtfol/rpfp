@@ -21,6 +21,7 @@ import { Tables } from "@/types/db";
 import { NavBar } from "@/components/nav-bar";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Footer } from "@/components/footer";
 
 const searchParams = new URLSearchParams(
   typeof window !== "undefined" ? window.location.search : ""
@@ -386,6 +387,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Footer />
       <PayDialog
         userDetails={currentUser}
         userEmail={user?.user_metadata.email}
